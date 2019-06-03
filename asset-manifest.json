@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tip-calculator/static/css/main.2cce8147.chunk.css",
-    "main.js": "/tip-calculator/static/js/main.76969982.chunk.js",
-    "main.js.map": "/tip-calculator/static/js/main.76969982.chunk.js.map",
+    "main.css": "/tip-calculator/static/css/main.34de6062.chunk.css",
+    "main.js": "/tip-calculator/static/js/main.c2835a03.chunk.js",
+    "main.js.map": "/tip-calculator/static/js/main.c2835a03.chunk.js.map",
     "runtime~main.js": "/tip-calculator/static/js/runtime~main.c6c55241.js",
     "runtime~main.js.map": "/tip-calculator/static/js/runtime~main.c6c55241.js.map",
-    "static/js/2.3310f33a.chunk.js": "/tip-calculator/static/js/2.3310f33a.chunk.js",
-    "static/js/2.3310f33a.chunk.js.map": "/tip-calculator/static/js/2.3310f33a.chunk.js.map",
+    "static/js/2.65aa1cca.chunk.js": "/tip-calculator/static/js/2.65aa1cca.chunk.js",
+    "static/js/2.65aa1cca.chunk.js.map": "/tip-calculator/static/js/2.65aa1cca.chunk.js.map",
     "index.html": "/tip-calculator/index.html",
-    "precache-manifest.70c644b8d077d3a91f2ad8fa19f87be9.js": "/tip-calculator/precache-manifest.70c644b8d077d3a91f2ad8fa19f87be9.js",
+    "precache-manifest.8b65d8a7940f4bf79d059510dfc2d11f.js": "/tip-calculator/precache-manifest.8b65d8a7940f4bf79d059510dfc2d11f.js",
     "service-worker.js": "/tip-calculator/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/tip-calculator/static/css/main.2cce8147.chunk.css.map"
+    "static/css/main.34de6062.chunk.css.map": "/tip-calculator/static/css/main.34de6062.chunk.css.map"
   }
 }
