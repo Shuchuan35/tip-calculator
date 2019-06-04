@@ -1,12 +1,13 @@
 import React from 'react';
 
-const NumberOfPeople = ({people, onNumberOfPeopleChange}) => (
+const NumberOfPeople = ({ numberOfPeople, onNumberOfPeopleChange }) => (
     <input
+        className='center'
         type='number'
         min='1'
         placeholder='Number of People'
-        name='NumberOfPeople'
-        value={people}
+        name='numberOfPeople'
+        value={numberOfPeople}
         onChange={onNumberOfPeopleChange}
     >
     </input>

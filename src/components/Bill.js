@@ -1,9 +1,11 @@
 import React from 'react';
 
-const InputBox = ({onBillChange}) => {
+const Bill = ({onBillChange}) => {
     return (
         <div>
+            <p><small>Bill:</small></p>
             <input 
+                className='center'
                 type='search' 
                 placeholder='enter bill $amount'
                 name='search'
@@ -14,4 +16,4 @@ const InputBox = ({onBillChange}) => {
     )
 }
 
-export default InputBox;
+export default Bill;

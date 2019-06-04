@@ -1,18 +1,18 @@
 import React from 'react';
 
-const BillTotal = ({ tip, billTotal, numberOfPeople }) => {
-    if (numberOfPeople === 1) {
+const BillTotal = ({ tip, billTotal, isSplit }) => {
+    if (!isSplit) {
         return (
             < div >
-                <p>Tip: {tip}</p>
-                <p>Total: {billTotal}</p>
+                <p>Tip: ${tip}</p>
+                <p>Total: ${billTotal}</p>
             </div >
         )
     } else {
         return (
             < div >
-                <p>Tip per person: {tip}</p>
-                <p>Total per person: {billTotal}</p>
+                <p>Tip <small>per person</small>: ${tip}</p>
+                <p>Total <small>per person</small>: ${billTotal}</p>
             </div >
         )
     }
