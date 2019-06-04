@@ -2,13 +2,12 @@ import React from 'react';
 
 const Bill = ({onBillChange}) => {
     return (
-        <div>
-            <p><small>Bill:</small></p>
+        <div >
+            <p>Bill</p>
             <input 
-                className='center'
-                type='search' 
+                className='input-box'
+                type='text' 
                 placeholder='enter bill $amount'
-                name='search'
                 onChange={onBillChange}
                 >
             </input>

@@ -1,9 +1,10 @@
 import React from 'react';
 
 const Tip = ({ tip, onTipChange }) => (
-    <div>
+    <div >
+        <p>Tip %</p>
         <input
-            className='center'
+            className='input-box'
             type='number'
             min='0'
             placeholder='tip %'

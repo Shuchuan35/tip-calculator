@@ -1,12 +1,35 @@
 .App {
   text-align: center;
+  border: 1px solid #dddddd;
+  border-radius: 0.5em;
+  width: 400px;
+  margin: 5px auto;
+  padding: 10px 0;
 }
 
-.App .center {
+h2 {
+  /* background-color: bisque;
+  border: 3px solid #dddddd;
+  margin: 0; */
+}
+
+.App .input-box {
   background-color: #E8FDF5;
+  width: 85%;
+  font-size: 20px;
   text-align: center;
-  height: 30px;
- 
+  height: 35px;
+}
+
+p {
+  text-align: left;
+  width: 85%;
+  margin: 10px auto auto;
+}
+
+span {
+  float: right;
+  font-weight: 700;
 }
 
 .App-logo {
