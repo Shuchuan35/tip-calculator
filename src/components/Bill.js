@@ -2,12 +2,12 @@ import React from 'react';
 
 const Bill = ({onBillChange}) => {
     return (
-        <div >
+        <div className="input-group mb-3">
             <p>Bill</p>
             <input 
-                className='input-box'
+                className='input-box form-control'
                 type='text' 
-                placeholder='enter bill $amount'
+                placeholder='enter bill $0.00'
                 onChange={onBillChange}
                 >
             </input>

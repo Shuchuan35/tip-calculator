@@ -14,9 +14,7 @@ class App extends Component {
   }
 
   onBillChange = e => {
-    // console.log(e.target.value);
     this.setState({ bill: e.target.value });
-    // console.log(this.state.bill);
   }
 
   onTipChange = e => {
@@ -30,22 +28,33 @@ class App extends Component {
       numberOfPeople: num, 
       isSplit: num === 1 ? false : true
     });
-    // console.log(this.state.isSplit);
+  }
+
+  handleNumUpClick = e => {
+    e.preventDefault();
+    let counter = this.state.numberOfPeople;
+    counter++;
+    counter = counter >= 100 ? 100 : counter;
+    this.setState({ numberOfPeople: counter });
+  }
+
+  handleNumDnClick = e => {
+    e.preventDefault();
+    let counter = this.state.numberOfPeople;
+    counter--;
+    counter = counter <=1 ? 1 : counter;
+    this.setState({ numberOfPeople: counter });
   }
 
   render() {
     const { bill, tip, numberOfPeople } = this.state;
-    // const tipAmount = Number.parseFloat(this.state.bill) * Number.parseInt(this.state.tip) / 100;
-    // const tip = numberOfPeople === 1 ? tipAmount.toFixed(2) : (tipAmount / Number.parseInt(numberOfPeople)).toFixed(2);
-    // const billTotal = Number.parseFloat(this.state.bill) + Number.parseFloat(tipAmount);
-    // const bill = numberOfPeople === 1 ? billTotal.toFixed(2) : (billTotal / Number.parseInt(numberOfPeople)).toFixed(2);
     let tipAmount = Number.parseFloat(bill) * Number.parseInt(tip) / 100;
     let billTotal = Number.parseFloat(bill) + Number.parseFloat(tipAmount);
     let isBillSplit = false;
-    // console.log(numberOfPeople);
+    
     if (numberOfPeople !== 1) {
-      tipAmount = (tipAmount / Number.parseInt(numberOfPeople)).toFixed(2);
-      billTotal = (billTotal / Number.parseInt(numberOfPeople)).toFixed(2);
+      tipAmount = tipAmount / Number.parseInt(numberOfPeople);
+      billTotal = billTotal / Number.parseInt(numberOfPeople);
       isBillSplit = true;
     }
 
@@ -62,11 +71,13 @@ class App extends Component {
         <NumberOfPeoplle
           numberOfPeople={numberOfPeople}
           onNumberOfPeopleChange={this.onNumberOfPeopleChange}
+          handleNumUpClick={this.handleNumUpClick}
+          handleNumDnClick={this.handleNumDnClick}
         />
         <BillTotal
-          tip={tipAmount}
+          tip={tipAmount.toFixed(2)}
           isSplit={isBillSplit}
-          billTotal={billTotal}
+          billTotal={billTotal.toFixed(2)}
         />
       </div>
     );
