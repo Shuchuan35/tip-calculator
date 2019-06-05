@@ -30,6 +30,22 @@ class App extends Component {
     });
   }
 
+  percentUpClick = e => {
+    e.preventDefault();
+    let counter = this.state.tip;
+    counter++;
+    counter = counter >= 100 ? 100 : counter;
+    this.setState({ tip: counter });
+  }
+
+  percentDownClick = e => {
+    e.preventDefault();
+    let counter = this.state.tip;
+    counter--;
+    counter = counter <=0 ? 0 : counter;
+    this.setState({ tip: counter });
+  }
+
   handleNumUpClick = e => {
     e.preventDefault();
     let counter = this.state.numberOfPeople;
@@ -67,6 +83,8 @@ class App extends Component {
         <Tip
           tip={tip}
           onTipChange={this.onTipChange}
+          percentUpClick={this.percentUpClick}
+          percentDownClick={this.percentDownClick}
         />
         <NumberOfPeoplle
           numberOfPeople={numberOfPeople}
