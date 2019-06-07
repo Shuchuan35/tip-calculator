@@ -9,24 +9,26 @@ class App extends Component {
   state = {
     bill: 0,
     tip: 15,
-    numberOfPeople: 1,
-    isSplit: false
+    numberOfPeople: 1
   }
 
   onBillChange = e => {
-    this.setState({ bill: e.target.value });
+    const billAmount = !e.target.value ? 0 : e.target.value;
+    this.setState({ bill: billAmount });
   }
 
   onTipChange = e => {
-    this.setState({ tip: e.target.value });
+    // restrict the user input for tip between 0 - 100 %
+    const tipPercent = e.target.value <= 0 ? 0 : e.target.value >= 100 ? 100 : e.target.value;
+    this.setState({ tip: tipPercent });
   }
 
   onNumberOfPeopleChange = e => {
-    const num = e.target.value <= 1 ? 1 : e.target.value;
+    // restrict the user input for split between 1 - 100 people
+    const num = e.target.value <= 1 ? 1 : e.target.value >= 100 ? 100 : e.target.value;
 
     this.setState({ 
-      numberOfPeople: num, 
-      isSplit: num === 1 ? false : true
+      numberOfPeople: num
     });
   }
 
@@ -46,7 +48,7 @@ class App extends Component {
     this.setState({ tip: counter });
   }
 
-  handleNumUpClick = e => {
+  numberUpClick = e => {
     e.preventDefault();
     let counter = this.state.numberOfPeople;
     counter++;
@@ -54,7 +56,7 @@ class App extends Component {
     this.setState({ numberOfPeople: counter });
   }
 
-  handleNumDnClick = e => {
+  numberDnClick = e => {
     e.preventDefault();
     let counter = this.state.numberOfPeople;
     counter--;
@@ -89,8 +91,8 @@ class App extends Component {
         <NumberOfPeoplle
           numberOfPeople={numberOfPeople}
           onNumberOfPeopleChange={this.onNumberOfPeopleChange}
-          handleNumUpClick={this.handleNumUpClick}
-          handleNumDnClick={this.handleNumDnClick}
+          handleNumUpClick={this.numberUpClick}
+          handleNumDnClick={this.numberDnClick}
         />
         <BillTotal
           tip={tipAmount.toFixed(2)}
